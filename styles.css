@@ -1,0 +1,430 @@
+/* Importiere die Urbanist-Schriftart */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap');
+
+/* AALLGEMEINE STILE */
+body {
+    font-family: 'Urbanist', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* NAVIGATION STILE */
+nav {
+    background: linear-gradient(135deg, #FF66C4, #FFDE59);
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+}
+
+nav a {
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 800;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    padding: 20px 20px;
+}
+
+nav a:hover {
+    color: black;
+}
+
+/* Weisse Farbe für aktive Links */
+nav a:active, nav a:focus {
+    color: white;
+}
+
+nav .brand {
+    font-weight: 900;
+    font-size: 24px;
+    color: black;
+}
+
+nav .brand:hover {
+    color: white;
+    background-color: transparent; /* Kein Hintergrundwechsel */
+}
+
+.dropbtn {
+    background: transparent;
+    font-weight: 800;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    padding: 20px 20px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Urbanist', sans-serif;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background: linear-gradient(135deg, #FF66C4, #FFDE59);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background: transparent;
+    color: white;
+}
+
+
+/* GALLERY STILE */
+.gallery-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.image-box {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-box img, .image-box video {
+    width: 100%;
+    height: auto;
+}
+
+button.prev, button.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: #FF66C4;
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+}
+
+button.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+button.prev:hover, button.next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* INSTAGRAM STILE */
+.instagram-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Ändere die Höhe nach Bedarf */
+}
+
+.instagram-container iframe {
+    width: 80%; /* Ändere die Breite nach Bedarf */
+    height: 100%; /* Vollständige Höhe des Containers verwenden */
+}
+
+/* REISEBERICHTE STILE */
+/* Styles für kommende Reiseberichte */
+.reports-container {
+    padding: 20px;
+    text-align: center;
+}
+
+#upcoming-reports {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.report {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.report:hover {
+    transform: scale(1.05);
+}
+
+.report img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.report h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.report p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Popup-Styles */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 60px;
+}
+
+.popup img {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: auto;
+    margin-left: 0rem;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Teilen-Button-Stile */
+.share-btn {
+    padding: 10px 20px;
+    background-color: #ffc745;
+    color: black;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: 'Urbanist', sans-serif;
+}
+
+/* Modal-Stile */
+.modal {
+    display: none; /* Verstecke das Modal standardmäßig */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    margin-top: 10%;
+}
+
+.close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* KONTAKT STILE */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+.form-group button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #FF66C4, #FFDE59);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-group button:hover {
+    transition: background-color 0.3s ease;
+}
+
+.error-message {
+    color: #ffc745;
+    font-size: 14px;
+}
+
+/* CSS pour le style de l'icône d'Instagram et de la fenêtre pop-up */
+
+#instagram-container {
+    position: fixed;
+    bottom: 30px; /* Marge en bas */
+    right: 30px; /* Marge à droite */
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #FF66C4, #FFDE59);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.circle:hover {
+    transform: scale(1.1); /* Agrandissement de 10% */
+}
+
+.circle img {
+    width: 50px; /* Taille de l'icône */
+    height: auto;
+}
+
+#popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond sombre semi-transparent */
+    z-index: 1000; /* Empilement au-dessus de tout le reste */
+    display: none; /* Initialement masqué */
+}
+
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1001; /* Empilement au-dessus de l'overlay */
+    display: none; /* Initialement masqué */
+}
+
+#popup-content {
+    position: relative;
+}
+
+.close-circle {
+    position: absolute;
+    top: 0px;
+    right: 0px; /* Déplacement vers la droite */
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #FF66C4, #FFDE59);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.close-icon {
+    font-size: 24px;
+    color: white;
+}
+
