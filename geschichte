@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-e4dFBCy4yv9UjzH7RbNMCBiYGJf1R3LdZO1sJ9RY/4qkRjGx0z+NRkWm4GGFkzL44Vb57m/gwZ7Oaax/UMw0CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Geschichte - Advntr</title>
+    <style>
+        .team-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 20px;
+        }
+
+        .team-member {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .team-member h3 {
+            margin: 10px 0 5px 0;
+        }
+
+        .team-member p {
+            margin: 0;
+        }
+
+        /* Zusätzlicher Stil für den neuen Absatz */
+        #project-info {
+            text-align: center;
+            margin: 20px;
+        }
+
+        /* Stil für den neuen Absatz zum Webapplikationsprojekt */
+        #project-title {
+            text-align: center;
+            margin: 40px 0 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Zusätzlicher Stil für den Absatz zum Schulprojekt */
+        #project-info {
+            text-align: center;
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="adventr.html" class="brand">ADVNTR</a>
+        <a href="reiseberichte.html">Reiseberichte</a>
+        <a href="uhr.html">Weltzeituhr</a>
+        <div class="dropdown">
+            <button class="dropbtn">Über uns</button>
+            <div class="dropdown-content">
+                <a href="geschichte.html">Geschichte</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+      <!-- Titel für das Webapplikationsprojekt -->
+      <h2 id="project-title">Webapplikationsprojekt 02</h2>
+
+      <!-- Information über das Schulprojekt -->
+      <p id="project-info">Dies ist ein Schulprojekt im Rahmen des Informatikunterrichts.</p>
+     
+
+    <div class="team-container">
+        <div class="team-member">
+            <img src="img/yannick.jpeg" alt="Yannick Hofmann">
+            <h3>Yannick Hofmann</h3>
+            <p>Yannick ist der Gründer und CEO von Advntr. Er hat eine Leidenschaft für Abenteuer und Reisen und bringt seine Erfahrung und Vision in das Unternehmen ein.</p>
+        </div>
+        <div class="team-member">
+            <img src="img/laura.jpeg" alt="Laura Emilie Grandt">
+            <h3>Laura Emilie Grandt</h3>
+            <p>Laura ist die COO von Advntr. Sie kümmert sich um die operativen Aspekte des Unternehmens und sorgt dafür, dass alles reibungslos abläuft.</p>
+        </div>
+    </div>
+
+</body>
+</html>
