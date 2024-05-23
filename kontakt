@@ -23,8 +23,8 @@
         <div class="dropdown">
             <button class="dropbtn">Über uns</button>
             <div class="dropdown-content">
-                <a href="#">Geschichte</a>
-                <a href="kontakt.html">Kontakt</a>
+                <a href="geschichte.html">Geschichte</a>
+                <a href="kontakt.html" class="active">Kontakt</a>
             </div>
     </nav>
 
