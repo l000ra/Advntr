@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <title>Geschichte - Advntr</title>
     <style>
+        /* Container-Design für die Teammitglieder */
+        /* Container-Design mit ChatGPT erstellt */
         .team-container {
             display: flex;
             justify-content: center;
@@ -15,11 +17,13 @@
             margin: 20px;
         }
 
+        /* Stil für jedes Teammitglied */
         .team-member {
             text-align: center;
             margin: 20px;
         }
 
+        /* Stil für die Bilder der Teammitglieder */
         .team-member img {
             width: 150px;
             height: auto;
@@ -27,21 +31,23 @@
             margin-bottom: 10px;
         }
 
+        /* Stil für die Namen der Teammitglieder */
         .team-member h3 {
             margin: 10px 0 5px 0;
         }
 
+        /* Stil für die Beschreibungen der Teammitglieder */
         .team-member p {
             margin: 0;
         }
 
-        /* Zusätzlicher Stil für den neuen Absatz */
+        /* Stil für den Absatz mit dem Projektinfo */
         #project-info {
             text-align: center;
             margin: 20px;
         }
 
-        /* Stil für den neuen Absatz zum Webapplikationsprojekt */
+        /* Stil für den Titel des Projekts */
         #project-title {
             text-align: center;
             margin: 40px 0 20px 0;
@@ -49,15 +55,10 @@
             font-weight: bold;
         }
 
-        /* Zusätzlicher Stil für den Absatz zum Schulprojekt */
-        #project-info {
-            text-align: center;
-            margin: 0;
-        }
-
     </style>
 </head>
 <body>
+    <!-- Navigationsleiste -->
     <nav>
         <a href="adventr.html" class="brand">ADVNTR</a>
         <a href="reiseberichte.html">Reiseberichte</a>
@@ -71,13 +72,11 @@
         </div>
     </nav>
 
-      <!-- Titel für das Webapplikationsprojekt -->
-      <h2 id="project-title">Webapplikationsprojekt 02</h2>
-
-      <!-- Information über das Schulprojekt -->
-      <p id="project-info">Dies ist ein Schulprojekt im Rahmen des Informatikunterrichts.</p>
-     
-
+    <!-- Projektinformationen -->
+    <h2 id="project-title">Webapplikationsprojekt 02</h2>
+    <p id="project-info">Dies ist ein Schulprojekt im Rahmen des Informatikunterrichts.</p>
+    
+    <!-- Teammitglieder mit Bildern und Beschreibungen -->
     <div class="team-container">
         <div class="team-member">
             <img src="img/yannick.jpeg" alt="Yannick Hofmann">
@@ -90,6 +89,22 @@
             <p>Laura ist die COO von Advntr. Sie kümmert sich um die operativen Aspekte des Unternehmens und sorgt dafür, dass alles reibungslos abläuft.</p>
         </div>
     </div>
+    
+    <!-- Instagram-Container und Popup -->
+    <div id="instagram-container">
+        <div class="circle" onclick="openPopup()">
+            <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=000000" alt="Instagram Icon">
+        </div>
+    </div>
 
+    <div id="popup-overlay"></div>
+    <div id="popup">
+        <div id="popup-content">
+            <div class="close-circle" onclick="closePopup()">
+                <span class="close-icon">×</span>
+            </div>
+            <iframe src="https://www.instagram.com/beautifuldestinations/embed/" width="500" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
 </body>
 </html>
