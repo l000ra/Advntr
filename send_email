@@ -1,0 +1,31 @@
+<?php
+// Überprüfen, ob das Formular abgesendet wurde
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Überprüfen, ob die erforderlichen Felder ausgefüllt wurden
+    if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message'])) {
+        // Verarbeiten und Senden der E-Mail
+        $to = "yannick.hofmann00@gmail.com"; // Ihre E-Mail-Adresse hier eintragen
+        $subject = "Kontaktanfrage von " . $_POST['name'];
+        $message = "Name: " . $_POST['name'] . "\n";
+        $message .= "E-Mail: " . $_POST['email'] . "\n";
+        $message .= "Nachricht:\n" . $_POST['message'];
+
+        // Senden der E-Mail
+        $headers = "From: " . $_POST['email'];
+
+        if (mail($to, $subject, $message, $headers)) {
+            // E-Mail wurde erfolgreich gesendet
+            echo json_encode(array("status" => "success"));
+        } else {
+            // Fehler beim Senden der E-Mail
+            echo json_encode(array("status" => "error", "message" => "Fehler beim Senden der E-Mail."));
+        }
+    } else {
+        // Fehler: Ein oder mehrere erforderliche Felder fehlen
+        echo json_encode(array("status" => "error", "message" => "Bitte füllen Sie alle erforderlichen Felder aus."));
+    }
+} else {
+    // Fehler: Das Formular wurde nicht richtig abgesendet
+    echo json_encode(array("status" => "error", "message" => "Das Formular wurde nicht richtig abgesendet."));
+}
+?>
