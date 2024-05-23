@@ -6,14 +6,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=DEIN_API_SCHLÜSSEL&callback=initMap" async defer></script>
-
     <script src="script.js" defer></script>
     <title>Advntr - Reiseberichte</title>
 </head>
 <body>
     <nav>
-        <a href="Adventr.html" class="brand">ADVNTR</a>
-        <a href="reiseberichte.html">Reiseberichte</a>
+        <a href="adventr.html" class="brand">ADVNTR</a>
+        <a href="reiseberichte.html" class="active">Reiseberichte</a>
         <a href="uhr.html">Weltzeituhr</a>
         <div class="dropdown">
             <button class="dropbtn">Über uns</button>
@@ -21,55 +20,97 @@
                 <a href="#">Geschichte</a>
                 <a href="kontakt.html">Kontakt</a>
             </div>
+        </div>
     </nav>
 
     <div class="reports-container">
         <h1>Kommende Reiseberichte</h1>
-        <div id="upcoming-reports">
-            <!-- Dynamisch generierte Berichte werden hier eingefügt -->
+        <div id="upcoming-reports" class="flex-container">
+            <!-- Reisebericht 1 -->
+            <div class="report">
+                <img src="img/macchupiccu.jpg" alt="Reisebericht 1">
+                <h3>Machu Picchu, Peru</h3>
+                <p>Diese antike Inka-Stadt in den peruanischen Anden bietet atemberaubende Ruinen und eine faszinierende Geschichte, die bis ins 15. Jahrhundert zurückreicht. Machu Picchu ist ein UNESCO-Weltkulturerbe und eines der beeindruckendsten archäologischen Wunder der Welt.</p>
+                <button class="share-btn" onclick="openShareModal('Machu Picchu, Peru')">Teilen</button>
+            </div>
+            <!-- Reisebericht 2 -->
+            <div class="report">
+                <img src="img/santorin.jpg" alt="Reisebericht 2">
+                <h3>Santorin, Griechenland</h3>
+                <p>Bekannt für seine atemberaubenden Sonnenuntergänge, malerischen weißen Häuser und blauen Dächer, ist Santorin eine romantische Insel im Ägäischen Meer. Die charmanten Dörfer, vulkanischen Strände und köstliche griechische Küche machen sie zu einem beliebten Reiseziel.</p>
+                <button class="share-btn" onclick="openShareModal('Santorin, Griechenland')">Teilen</button>
+            </div>
+            <!-- Weitere Reiseberichte -->
+             <!-- Reisebericht 3 -->
+             <div class="report">
+                <img src="img/kyoto.jpg" alt="Reisebericht 3">
+                <h3>Kyoto, Japan</h3>
+                <p>Als kulturelles Herz Japans ist Kyoto berühmt für seine prächtigen Tempel, gepflegten Gärten und traditionellen Geishas. Besucher können durch die engen Gassen schlendern, um die reiche Geschichte und die wunderschöne Architektur zu erleben.                </p>
+                <button class="share-btn" onclick="openShareModal('Reiseziel 3')">Teilen</button>
+            </div>
+            <!-- Reisebericht 4 -->
+            <div class="report">
+                <img src="img/cappadocia.jpg" alt="Reisebericht 4">
+                <h3>Cappadocia, Türkei</h3>
+                <p>Diese einzigartige Region ist bekannt für ihre surrealen Landschaften mit bizarren Felsformationen, Höhlenwohnungen und farbenfrohen Heißluftballons, die bei Sonnenaufgang über die Himmel schweben. Cappadocia bietet ein unvergessliches Erlebnis für Abenteurer.</p>
+                <button class="share-btn" onclick="openShareModal('Reiseziel 4')">Teilen</button>
+            </div>
+            <!-- Reisebericht 5 -->
+            <div class="report">
+                <img src="img/kanada.jpg" alt="Reisebericht 5">
+                <h3>Banff National Park, Kanada</h3>
+                <p>Mit seinen kristallklaren Seen, majestätischen Berggipfeln und endlosen Wanderwegen ist der Banff National Park ein Paradies für Naturliebhaber. Hier können Besucher wilde Tiere beobachten, in heißen Quellen entspannen und die unberührte Schönheit der kanadischen Rockies erleben.                </p>
+                <button class="share-btn" onclick="openShareModal('Reiseziel 5')">Teilen</button>
+            </div>
+            <!-- Reisebericht 6 -->
+            <div class="report">
+                <img src="img/neuseeland.jpg" alt="Reisebericht 6">
+                <h3>Neuseeländische Südinsel</h3>
+                <p>Diese atemberaubende Insel ist berühmt für ihre vielfältige Landschaft, von den schneebedeckten Alpen bis zu den malerischen Küsten. Besucher können Gletscher erkunden, durch üppige Regenwälder wandern und Abenteuersportarten wie Bungee-Jumping und Skydiving ausprobieren.</p>
+                <button class="share-btn" onclick="openShareModal('Reiseziel 6')">Teilen</button>
+            </div>
+            <!-- Reisebericht 7 -->
+            <div class="report">
+                <img src="img/dubai.jpg" alt="Reisebericht 7">
+                <h3>Dubai, Vereinigte Arabische Emirate</h3>
+                <p>Diese moderne Metropole in der Wüste ist ein Symbol für Luxus und Innovation. Besucher können Wolkenkratzer bestaunen, in erstklassigen Einkaufszentren einkaufen, exotische Wüsten-Safaris unternehmen und kulturelle Sehenswürdigkeiten wie den Burj Khalifa und das Dubai Museum erkunden.</p>
+                <button class="share-btn" onclick="openShareModal('Reiseziel 7')">Teilen</button>
+            </div>
+            <!-- Reisebericht 8 -->
+            <div class="report">
+                <img src="img/galapagos.jpg" alt="Reisebericht 8">
+                <h3>Galapagos-Inseln, Ecuador</h3>
+                <p>Diese abgelegenen Inseln im Pazifischen Ozean sind berühmt für ihre einzigartige Tierwelt und unberührte Natur. Die Galapagos bieten die Möglichkeit, seltene Tiere wie Riesenschildkröten, Meeresechsen und Blaufußtölpel in ihrer natürlichen Umgebung zu sehen, und sind ein Paradies für Taucher und Naturliebhaber.</p>
+                <button class="share-btn" onclick="openShareModal('Reiseziel 8')">Teilen</button>
+            </div>
         </div>
     </div>
 
-    <!-- Popup für zusätzliche Informationen -->
-    <div id="popup" class="popup">
-        <span class="close" onclick="closePopup()">&times;</span>
-        <img id="popup-image" src="" alt="Report Image">
-        <h2 id="popup-title">Bericht Titel</h2>
-        <p id="popup-description">Beschreibung des Berichts</p>
-        <p id="popup-details">Details</p>
-        <p id="popup-tips">Reisetipps</p>
-        <button class="share-btn" onclick="openShareModal()">Teilen</button>
+        </div>
     </div>
-
+    
+    <!-- Popup für das Teilen auf Facebook und Instagram -->
     <div id="share-modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeShareModal()">&times;</span>
-            <p>Teile diesen Bericht auf:</p>
-            <!-- Hier können die Links zu den verschiedenen Social-Media-Plattformen hinzugefügt werden -->
-            <a href="https://www.facebook.com/" class="share-link" target="_blank">Facebook</a>
-            <a href="https://www.threads.net/" class="share-link" target="_blank">Threads</a>
-            <a href="https://www.instagram.com/" class="share-link" target="_blank">Instagram</a>
-        </div>
-    </div>
-    
-    <div id="instagram-container">
-        <div class="circle" onclick="openPopup()">
-            <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=000000" alt="Instagram Icon">
+            <p id="share-text">Teile dieses Reiseziel mit deinen Freunden!</p>
+            <!-- Links zum Teilen auf Facebook und Instagram -->
+            <a id="instagram-link" href="https://www.instagram.com/" target="_blank">Instagram</a>
+            <a id="facebook-link" href="https://www.facebook.com/" target="_blank">Facebook</a>
         </div>
     </div>
 
-    <div id="popup-overlay"></div>
-    <div id="popup">
-        <div id="popup-content">
-            <div class="close-circle" onclick="closePopup()">
-                <span class="close-icon">×</span>
-            </div>
-            <iframe src="https://www.instagram.com/beautifuldestinations/embed/" width="500" height="600" frameborder="0" scrolling="no"></iframe>
-        </div>
-    </div>
-    
-    
+    <script>
+        function openShareModal(destination) {
+            document.getElementById("share-modal").style.display = "block";
+            document.getElementById("share-text").innerText = "Teile " + destination + " mit deinen Freunden!";
+            document.getElementById("instagram-link").href = "https://www.instagram.com";
+            document.getElementById("facebook-link").href = "https://www.facebook.com";
+        }
 
-    
+        function closeShareModal() {
+            document.getElementById("share-modal").style.display = "none";
+        }
+    </script>
 </body>
 </html>
