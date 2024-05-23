@@ -1,12 +1,7 @@
 // script.js
 
 // JavaScript-Code einfügen, um interaktive Elemente und Dropdowns zu implementieren
-
-// Menu hamburger
-function toggleMenu() {
-    var menu = document.getElementById("main-menu");
-    menu.classList.toggle("show-menu");
-}
+//Funktionen wurden mit Chat GPT erstellt und mit eigenem Wissen korrekt eingesetzt, korrigiert oder ergänzt
 
 // Bild-Galerie
 let currentIndex = 0;
@@ -34,85 +29,37 @@ function nextImage() {
 
 showImage(currentIndex);
 
-
-//Insta
-function redirectToInstagram() {
-    window.location.href = 'https://www.instagram.com/discoverearth/';
-}
-
-// Liste des emojis de drapeaux
-var flagEmojis = {
-    'post1.jpg': '🇩🇪',
-    'post2.jpg': '🇺🇸',
-    'post3.jpg': '🇫🇷',
-    'post4.jpg': '🇪🇸',
-    'post5.jpg': '🇮🇹',
-    'post6.jpg': '🇨🇳'
-};
-
-// Fonction pour ajouter l'overlay lors du survol avec le drapeau associé à chaque poste
-function addOverlay(element, flag) {
-    var overlay = document.createElement('div');
-    overlay.classList.add('instagram-overlay');
-    overlay.innerHTML = flag;
-    element.appendChild(overlay);
-}
-
-// Fonction pour supprimer l'overlay
-function removeOverlay(element) {
-    var overlay = element.querySelector('.instagram-overlay');
-    if (overlay) {
-        overlay.remove();
-    }
-}
-
 // UHR FUNKTION
 function updateTime(timezone) {
     const options = { timeZone: timezone, hour: 'numeric', minute: 'numeric', second: 'numeric' };
     setInterval(() => {
-        const timeString = new Date().toLocaleString('de-CH', options);
+        const timeString = new Date().toLocaleString('de-DE', options); // Übersetzung von 'de-CH' nach 'de-DE'
         document.getElementById("clock").textContent = timeString;
     }, 1000);
 }
 
 function initWorldClock() {
-    // Ajouter un écouteur d'événement pour chaque bouton
+    // Hinzufügen eines Eventlisteners für jeden Button
     const buttons = document.querySelectorAll("#buttons button");
     buttons.forEach(button => {
         button.addEventListener("click", function() {
-            // Récupérer le fuseau horaire correspondant au bouton cliqué
-            const timezone = this.getAttribute("data-timezone");
-            updateTime(timezone);
-        });
-    });
-
-    // Afficher l'heure en temps réel au chargement de la page
-    updateTime("UTC");
-}
-
-function initWorldClock() {
-    // Ajouter un écouteur d'événement pour chaque bouton
-    const buttons = document.querySelectorAll("#buttons button");
-    buttons.forEach(button => {
-        button.addEventListener("click", function() {
-            // Supprimer la classe 'active' de tous les boutons
+            // Entfernen der 'active'-Klasse von allen Buttons
             buttons.forEach(btn => {
                 btn.classList.remove('active');
             });
 
-            // Ajouter la classe 'active' au bouton cliqué
+            // Hinzufügen der 'active'-Klasse zum angeklickten Button
             this.classList.add('active');
 
-            // Récupérer le fuseau horaire correspondant au bouton cliqué
+            // Abrufen der Zeitzone, die dem angeklickten Button entspricht
             const timezone = this.getAttribute("data-timezone");
             updateTime(timezone);
         });
     });
 
-    // Sélectionner le premier bouton par défaut et le mettre en surbrillance
+    // Standardmäßig den ersten Button auswählen und markieren
     buttons[0].click();
 }
-
 
 window.onload = initWorldClock;
 
@@ -122,92 +69,33 @@ function sendEmail() {
     var email = document.getElementById('email').value;
     var message = document.getElementById('message').value;
 
-    // Créer une instance de l'objet XMLHttpRequest
+    // Erstellen einer XMLHttpRequest-Instanz
     var xhr = new XMLHttpRequest();
 
-    // Configurer la requête
+    // Konfigurieren der Anfrage
     xhr.open('POST', 'send_email.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-    // Définir la fonction de rappel lors de la réception de la réponse
+    // Definieren der Rückruffunktion beim Empfangen der Antwort
     xhr.onload = function() {
         if (xhr.status === 200) {
-            // Traitement de la réponse si nécessaire
-            alert('E-mail envoyé avec succès !');
+            // Verarbeiten der Antwort bei Bedarf
+            alert('E-Mail erfolgreich versendet!');
         } else {
-            alert('Une erreur s\'est produite lors de l\'envoi de l\'e-mail.');
+            alert('Beim Senden der E-Mail ist ein Fehler aufgetreten.');
         }
     };
 
-    // Préparer les données à envoyer
+    // Vorbereiten der zu sendenden Daten
     var data = 'name=' + encodeURIComponent(name) +
                '&email=' + encodeURIComponent(email) +
                '&message=' + encodeURIComponent(message);
 
-    // Envoyer la requête avec les données du formulaire
+    // Senden der Anfrage mit den Formulardaten
     xhr.send(data);
 }
 
 //REISEBERICHTE
-const upcomingReports = [
-    {
-        id: 'report2',
-        title: 'Abenteuer in der Sahara',
-        description: 'Ein Abenteuer durch die endlose Wüste.',
-        image: 'img/Heißluftballon Patrik Svedberg.jpg',
-        details: 'Erfahren Sie mehr über die Herausforderungen und Schönheiten der Sahara.',
-        tips: 'Bringen Sie genügend Wasser mit und schützen Sie sich vor der Sonne.'
-    },
-    {
-        id: 'report2',
-        title: 'Abenteuer in der Sahara',
-        description: 'Ein Abenteuer durch die endlose Wüste.',
-        image: 'img/Heißluftballon Patrik Svedberg.jpg',
-        details: 'Erfahren Sie mehr über die Herausforderungen und Schönheiten der Sahara.',
-        tips: 'Bringen Sie genügend Wasser mit und schützen Sie sich vor der Sonne.'
-    },
-    {
-        id: 'report2',
-        title: 'Abenteuer in der Sahara',
-        description: 'Ein Abenteuer durch die endlose Wüste.',
-        image: 'img/Heißluftballon Patrik Svedberg.jpg',
-        details: 'Erfahren Sie mehr über die Herausforderungen und Schönheiten der Sahara.',
-        tips: 'Bringen Sie genügend Wasser mit und schützen Sie sich vor der Sonne.'
-    },
-    {
-        id: 'report2',
-        title: 'Abenteuer in der Sahara',
-        description: 'Ein Abenteuer durch die endlose Wüste.',
-        image: 'img/Heißluftballon Patrik Svedberg.jpg',
-        details: 'Erfahren Sie mehr über die Herausforderungen und Schönheiten der Sahara.',
-        tips: 'Bringen Sie genügend Wasser mit und schützen Sie sich vor der Sonne.'
-    },
-    {
-        id: 'report2',
-        title: 'Abenteuer in der Sahara',
-        description: 'Ein Abenteuer durch die endlose Wüste.',
-        image: 'img/Heißluftballon Patrik Svedberg.jpg',
-        details: 'Erfahren Sie mehr über die Herausforderungen und Schönheiten der Sahara.',
-        tips: 'Bringen Sie genügend Wasser mit und schützen Sie sich vor der Sonne.'
-    },
-    {
-        id: 'report2',
-        title: 'Abenteuer in der Sahara',
-        description: 'Ein Abenteuer durch die endlose Wüste.',
-        image: 'img/Heißluftballon Patrik Svedberg.jpg',
-        details: 'Erfahren Sie mehr über die Herausforderungen und Schönheiten der Sahara.',
-        tips: 'Bringen Sie genügend Wasser mit und schützen Sie sich vor der Sonne.'
-    },
-    {
-        id: 'report2',
-        title: 'Abenteuer in der Sahara',
-        description: 'Ein Abenteuer durch die endlose Wüste.',
-        image: 'img/Heißluftballon Patrik Svedberg.jpg',
-        details: 'Erfahren Sie mehr über die Herausforderungen und Schönheiten der Sahara.',
-        tips: 'Bringen Sie genügend Wasser mit und schützen Sie sich vor der Sonne.'
-    },
-];
-
 document.addEventListener('DOMContentLoaded', () => {
     const reportsContainer = document.getElementById('upcoming-reports');
 
@@ -251,54 +139,33 @@ function closeShareModal() {
     document.getElementById('share-modal').style.display = 'none';
 }
 
-
-
 // WELTZEITUHR
-const map = L.map('map').setView([0, 0], 2); // Centre de la carte et zoom par défaut
-const apiUrl = 'http://api.timezonedb.com/v2.1/get-time-zone?key=8GZH068JE3CE'; // Remplacez YOUR_API_KEY par votre propre clé d'API TimeZoneDB
+const map = L.map('map').setView([0, 0], 2); // Zentrum der Karte und Standardzoom
+const apiUrl = 'http://api.timezonedb.com/v2.1/get-time-zone?key=8GZH068JE3CE'; // Ersetzen Sie YOUR_API_KEY durch Ihren eigenen TimeZoneDB-API-Schlüssel
 
-// Ajout de la carte de base OpenStreetMap
+// Hinzufügen der OpenStreetMap-Grundkarte
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-// Fonction pour obtenir l'heure locale en fonction des coordonnées géographiques
+// Funktion zum Abrufen der lokalen Uhrzeit basierend auf geografischen Koordinaten
 async function getTimezone(lat, lng) {
   const response = await fetch(`${apiUrl}&format=json&by=position&lat=${lat}&lng=${lng}`);
   const data = await response.json();
   return data.formatted;
 }
 
-// Ajout d'un gestionnaire d'événement de clic sur la carte
+// Hinzufügen eines Klick-Eventhandlers auf der Karte
 map.on('click', async function(e) {
   const latlng = e.latlng;
   const formattedTime = await getTimezone(latlng.lat, latlng.lng);
   L.popup()
     .setLatLng(latlng)
-    .setContent(`<div class="popup-content">Lokale Zeit : ${formattedTime}</div>`)
+    .setContent(`<div class="popup-content">Lokale Zeit: ${formattedTime}</div>`)
     .openOn(map);
 });
 
-
-// JavaScript-Code für die Kartenansicht mit Google Maps
-document.addEventListener('DOMContentLoaded', function() {
-    // Funktion zur Anzeige der Kartenansicht mit Google Maps
-    function zeigeKartenansicht() {
-        // Erstelle eine neue Google Maps-Karte
-        var map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644}, // Koordinaten für das Zentrum der Karte
-            zoom: 8 // Zoomstufe der Karte
-        });
-    }
-
-    // Button-Element auswählen
-    var mapButton = document.getElementById('mapButton');
-
-    // Event Listener hinzufügen
-    mapButton.addEventListener('click', zeigeKartenansicht);
-});
-
-//KONTAKTFORMULAR
+// KONTAKTFORMULAR
 function sendEmail() {
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
@@ -314,23 +181,4 @@ function sendEmail() {
 
     // Versuche, die Outlook-App zu öffnen
     window.location.href = outlookAppUri;
-
-    // Wenn die Outlook-App nicht geöffnet werden kann, öffne den Mailto-Link
-    setTimeout(function() {
-        window.location.href = mailtoLink;
-    }, 500);
 }
-
-
-// JavaScript pour gérer l'ouverture et la fermeture de la fenêtre pop-up
-function openPopup() {
-    document.getElementById('popup-overlay').style.display = 'block';
-    document.getElementById('popup').style.display = 'block';
-}
-
-function closePopup() {
-    document.getElementById('popup-overlay').style.display = 'none';
-    document.getElementById('popup').style.display = 'none';
-}
-
-
