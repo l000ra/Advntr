@@ -3,68 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-e4dFBCy4yv9UjzH7RbNMCBiYGJf1R3LdZO1sJ9RY/4qkRjGx0z+NRkWm4GGFkzL44Vb57m/gwZ7Oaax/UMw0CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Advntr</title>
 </head>
 <body>
+    <!-- Die Navigationsleiste wurde selbst erstellt -->
+    <nav>
+        <a href="adventr.html" class="brand active">ADVNTR</a>
+        <a href="reiseberichte.html">Reiseberichte</a>
+        <a href="uhr.html">Weltzeituhr</a>
+        <div class="dropdown">
+            <button class="dropbtn">Über uns</button>
+            <div class="dropdown-content">
+                <a href="geschichte.html">Geschichte</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+        </div>
+    </nav>
 
- <!-- Header avec les éléments de menu -->
- <nav>
-    <a href="Adventr.html">Startseite</a>
-    <a href="reiseberichte.html">Reiseberichte</a>
-    <a href="uhr.html">Weltzeituhr</a>
-    <div class="dropdown">
-        <button class="dropbtn">Über uns</button>
-        <div class="dropdown-content">
-            <a href="#">Geschichte</a>
-            <a href="kontakt.html">Kontakt</a>
+    <!-- Die Galerie mit den Bildern wurde mithilfe von ChatGPT erstellt -->
+    <div class="gallery-container">
+        <div class="gallery">
+            <div class="image-box">
+                <img src="img/Heißluftballon Patrik Svedberg.jpg" alt="Nonna">
+            </div>
+            <div class="image-box">
+                <img src="img/Lund Cathedral.jpg" alt="Sofia">
+            </div>
+            <div class="image-box">
+                <img src="img/Nordlichter Fredrik Larsson.jpg" alt="Lachs">
+            </div>
+            <div class="image-box">
+                <img src="img/Rotes Blockhaus von Doris Beling.jpg" alt="Lachs">
+            </div>
+        </div>
+        <button class="prev" onclick="prevImage()">❮</button>
+        <button class="next" onclick="nextImage()">❯</button>
+    </div>
+
+    <!-- Der Instagram-Container und das Popup wurden mithilfe von ChatGPT erstellt -->
+    <div id="instagram-container">
+        <div class="circle" onclick="openPopup()">
+            <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=000000" alt="Instagram Icon">
         </div>
     </div>
-    <a href="#">Suche</a>
-</nav>
 
-<div class="gallery-container">
-    
-    <div class="gallery">
-        <div class="image-box">
-            <img src="img/nonna.jpg" alt="Nonna">
-        </div>
-        <div class="image-box">
-            <img src="img/sofia.jpg" alt="Sofia">
-        </div>
-        <div class="image-box">
-            <img src="img/lachs.jpg" alt="Lachs">
+    <!-- Das Popup-Overlay und der Popup-Inhalt wurden mithilfe von ChatGPT erstellt -->
+    <div id="popup-overlay"></div>
+    <div id="popup">
+        <div id="popup-content">
+            <div class="close-circle" onclick="closePopup()">
+                <span class="close-icon">×</span>
+            </div>
+            <iframe src="https://www.instagram.com/beautifuldestinations/embed/" width="500" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
     </div>
-    <button class="prev" onclick="prevImage()">❮</button>
-    <button class="next" onclick="nextImage()">❯</button>
-</div>
-
-
-<div id="instagram-section">
-    <div class="instagram-container">
-        <div class="instagram-post" onmouseover="addOverlay(this, flagEmojis['post1.jpg'])" onmouseout="removeOverlay(this)">
-            <img src="img/stockholm-insta-adventr/1.jpg" alt="Post 1">
-        </div>
-        <div class="instagram-post" onmouseover="addOverlay(this, flagEmojis['post2.jpg'])" onmouseout="removeOverlay(this)">
-            <img src="img/stockholm-insta-adventr/2.jpg" alt="Post 2">
-        </div>
-        <div class="instagram-post" onmouseover="addOverlay(this, flagEmojis['post3.jpg'])" onmouseout="removeOverlay(this)">
-            <img src="img/stockholm-insta-adventr/3.jpg" alt="Post 1">
-        </div>
-        <div class="instagram-post" onmouseover="addOverlay(this, flagEmojis['post4.jpg'])" onmouseout="removeOverlay(this)">
-            <img src="img/stockholm-insta-adventr/4.jpg" alt="Post 1">
-        </div>
-        <div class="instagram-post" onmouseover="addOverlay(this, flagEmojis['post5.jpg'])" onmouseout="removeOverlay(this)">
-            <img src="img/stockholm-insta-adventr/5.jpg" alt="Post 1">
-        </div>
-        <div class="instagram-post" onmouseover="addOverlay(this, flagEmojis['post6.jpg'])" onmouseout="removeOverlay(this)">
-            <img src="img/stockholm-insta-adventr/6.jpg" alt="Post 1">
-        </div>
-    </div>
-    <button class="instagram-button" onclick="redirectToInstagram()">Visitez notre compte Instagram</button>
-</div>
 
 </body>
 </html>
