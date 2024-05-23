@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=DEIN_API_SCHLÜSSEL&callback=initMap" async defer></script>
+
+    <script src="script.js" defer></script>
+    <title>Advntr - Reiseberichte</title>
+</head>
+<body>
+    <nav>
+        <a href="Adventr.html" class="brand">ADVNTR</a>
+        <a href="reiseberichte.html">Reiseberichte</a>
+        <a href="uhr.html">Weltzeituhr</a>
+        <div class="dropdown">
+            <button class="dropbtn">Über uns</button>
+            <div class="dropdown-content">
+                <a href="#">Geschichte</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+    </nav>
+
+    <div class="reports-container">
+        <h1>Kommende Reiseberichte</h1>
+        <div id="upcoming-reports">
+            <!-- Dynamisch generierte Berichte werden hier eingefügt -->
+        </div>
+    </div>
+
+    <!-- Popup für zusätzliche Informationen -->
+    <div id="popup" class="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <img id="popup-image" src="" alt="Report Image">
+        <h2 id="popup-title">Bericht Titel</h2>
+        <p id="popup-description">Beschreibung des Berichts</p>
+        <p id="popup-details">Details</p>
+        <p id="popup-tips">Reisetipps</p>
+        <button class="share-btn" onclick="openShareModal()">Teilen</button>
+    </div>
+
+    <div id="share-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeShareModal()">&times;</span>
+            <p>Teile diesen Bericht auf:</p>
+            <!-- Hier können die Links zu den verschiedenen Social-Media-Plattformen hinzugefügt werden -->
+            <a href="https://www.facebook.com/" class="share-link" target="_blank">Facebook</a>
+            <a href="https://www.threads.net/" class="share-link" target="_blank">Threads</a>
+            <a href="https://www.instagram.com/" class="share-link" target="_blank">Instagram</a>
+        </div>
+    </div>
+    
+    <div id="instagram-container">
+        <div class="circle" onclick="openPopup()">
+            <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=000000" alt="Instagram Icon">
+        </div>
+    </div>
+
+    <div id="popup-overlay"></div>
+    <div id="popup">
+        <div id="popup-content">
+            <div class="close-circle" onclick="closePopup()">
+                <span class="close-icon">×</span>
+            </div>
+            <iframe src="https://www.instagram.com/beautifuldestinations/embed/" width="500" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+    
+    
+
+    
+</body>
+</html>
