@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+<!-- Am Anfang Ihrer HTML-Datei im Head-Bereich -->
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanista:wght@400;700&display=swap">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Advntr</title>
+    
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav>
+        <a href="adventr.html" class="brand">ADVNTR</a>
+        <a href="reiseberichte.html">Reiseberichte</a>
+        <a href="uhr.html">Weltzeituhr</a>
+        <div class="dropdown">
+            <button class="dropbtn">Über uns</button>
+            <div class="dropdown-content">
+                <a href="#">Geschichte</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+    </nav>
+
+<!-- Formular -->
+<div class="container">
+    <h1>Kontaktformular</h1>
+    <form id="contact-form">
+        <!-- Vos champs de formulaire ici -->
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Nachricht:</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <div class="form-group">
+            <button type="button" onclick="sendEmail()">Senden</button>
+        </div>
+    </form>
+</div>
+
+<div id="instagram-container">
+    <div class="circle" onclick="openPopup()">
+        <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=000000" alt="Instagram Icon">
+    </div>
+</div>
+
+<div id="popup-overlay"></div>
+<div id="popup">
+    <div id="popup-content">
+        <div class="close-circle" onclick="closePopup()">
+            <span class="close-icon">×</span>
+        </div>
+        <iframe src="https://www.instagram.com/beautifuldestinations/embed/" width="500" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+</div>
+
+</body>
+</html>
