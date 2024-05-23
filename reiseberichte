@@ -100,6 +100,22 @@
         </div>
     </div>
 
+    <div id="instagram-container">
+        <div class="circle" onclick="openPopup()">
+            <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=000000" alt="Instagram Icon">
+        </div>
+    </div>
+
+    <div id="popup-overlay"></div>
+    <div id="popup">
+        <div id="popup-content">
+            <div class="close-circle" onclick="closePopup()">
+                <span class="close-icon">×</span>
+            </div>
+            <iframe src="https://www.instagram.com/beautifuldestinations/embed/" width="500" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+
     <script>
         function openShareModal(destination) {
             document.getElementById("share-modal").style.display = "block";
