@@ -1,7 +1,8 @@
-/* Importiere die Urbanist-Schriftart */
+/* URBANIST FONT */
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap');
-
-/* AALLGEMEINE STILE */
+/* CSS wurde in Kombination mit Chat GPT und den angegebenen html codes eingefügt
+/* ----------------------------------------------------------------------------*/
+/* ALLGEMEINE STILE */
 body {
     font-family: 'Urbanist', sans-serif;
     margin: 0;
@@ -10,6 +11,7 @@ body {
     height: 100%;
 }
 
+/* ----------------------------------------------------------------------------*/
 /* NAVIGATION STILE */
 nav {
     background: linear-gradient(135deg, #FF66C4, #FFDE59);
@@ -34,7 +36,7 @@ nav a:hover {
 
 /* Weisse Farbe für aktive Links */
 nav a:active, nav a:focus {
-    color: white;
+    color: white(0, 0, 0);
 }
 
 nav .brand {
@@ -94,7 +96,7 @@ nav .brand:hover {
     color: white;
 }
 
-
+/* ----------------------------------------------------------------------------*/
 /* GALLERY STILE */
 .gallery-container {
     position: relative;
@@ -143,6 +145,7 @@ button.prev:hover, button.next:hover {
     background-color: rgba(0,0,0,0.8);
 }
 
+/* ----------------------------------------------------------------------------*/
 /* INSTAGRAM STILE */
 .instagram-container {
     display: flex;
@@ -156,8 +159,24 @@ button.prev:hover, button.next:hover {
     height: 100%; /* Vollständige Höhe des Containers verwenden */
 }
 
+/* ----------------------------------------------------------------------------*/
 /* REISEBERICHTE STILE */
-/* Styles für kommende Reiseberichte */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.report {
+    width: 300px;
+    margin: 10px;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
 .reports-container {
     padding: 20px;
     text-align: center;
@@ -246,6 +265,11 @@ button.prev:hover, button.next:hover {
     cursor: pointer;
 }
 
+.active {
+    background-color: white;
+    color: black;
+}
+
 /* Teilen-Button-Stile */
 .share-btn {
     padding: 10px 20px;
@@ -294,7 +318,7 @@ button.prev:hover, button.next:hover {
     cursor: pointer;
 }
 
-
+/* ----------------------------------------------------------------------------*/
 /* KONTAKT STILE */
 .container {
     max-width: 600px;
@@ -353,12 +377,12 @@ h1 {
     font-size: 14px;
 }
 
-/* CSS pour le style de l'icône d'Instagram et de la fenêtre pop-up */
-
+/* ----------------------------------------------------------------------------*/
+/*INSTAGRAM POP-UP */
 #instagram-container {
     position: fixed;
-    bottom: 30px; /* Marge en bas */
-    right: 30px; /* Marge à droite */
+    bottom: 30px; 
+    right: 30px; 
 }
 
 .circle {
@@ -374,11 +398,11 @@ h1 {
 }
 
 .circle:hover {
-    transform: scale(1.1); /* Agrandissement de 10% */
+    transform: scale(1.1); /* Vergrösserung um 10% */
 }
 
 .circle img {
-    width: 50px; /* Taille de l'icône */
+    width: 50px; /* Grösse des Symbols */
     height: auto;
 }
 
@@ -388,9 +412,9 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fond sombre semi-transparent */
-    z-index: 1000; /* Empilement au-dessus de tout le reste */
-    display: none; /* Initialement masqué */
+    background-color: rgba(0, 0, 0, 0.5); /* Dunkler, halbtransparenter Hintergrund */
+    z-index: 1000; /* Stapeln über alles andere */
+    display: none; /* Ursprünglich ausgeblendet */
 }
 
 #popup {
@@ -401,8 +425,8 @@ h1 {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    z-index: 1001; /* Empilement au-dessus de l'overlay */
-    display: none; /* Initialement masqué */
+    z-index: 1001; /* Stapeln über dem Overlay */
+    display: none; /* Ursprünglich ausgeblendet */
 }
 
 #popup-content {
@@ -412,7 +436,7 @@ h1 {
 .close-circle {
     position: absolute;
     top: 0px;
-    right: 0px; /* Déplacement vers la droite */
+    right: 0px; /* Nach rechts bewegen */
     width: 50px;
     height: 50px;
     background: linear-gradient(135deg, #FF66C4, #FFDE59);
