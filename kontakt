@@ -2,8 +2,6 @@
 <html lang="de">
 <head>
 
-<!-- Am Anfang Ihrer HTML-Datei im Head-Bereich -->
-
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanista:wght@400;700&display=swap">
 
     <meta charset="UTF-8">
@@ -26,13 +24,15 @@
                 <a href="geschichte.html">Geschichte</a>
                 <a href="kontakt.html" class="active">Kontakt</a>
             </div>
+        </div> <!-- Fehlendes Schließtag hinzugefügt -->
     </nav>
 
 <!-- Formular -->
 <div class="container">
     <h1>Kontaktformular</h1>
+    <!-- Kontaktformular mit grundlegendem Wissen aus dem Informatikunterricht erstellt -->
     <form id="contact-form">
-        <!-- Vos champs de formulaire ici -->
+        <!-- Ihre Formularfelder hier -->
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -46,7 +46,18 @@
             <textarea id="message" name="message" required></textarea>
         </div>
         <div class="form-group">
-            <button type="button" onclick="sendEmail()">Senden</button>
+            <!-- Stil für den Senden-Button wurde mit ChatGPT ergänzt -->
+            <!-- Der Button wurde mithilfe von ChatGPT erstellt -->
+            <button type="button" onclick="sendEmail()" style="background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;">Senden</button>
         </div>
     </form>
 </div>
