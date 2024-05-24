@@ -41,62 +41,41 @@
                 <button class="share-btn" onclick="openShareModal('Santorin, Griechenland')">Teilen</button>
             </div>
             <!-- Weitere Reiseberichte -->
-             <!-- Reisebericht 3 -->
-             <div class="report">
+            <!-- Reisebericht 3 -->
+            <div class="report">
                 <img src="img/kyoto.jpg" alt="Reisebericht 3">
                 <h3>Kyoto, Japan</h3>
-                <p>Als kulturelles Herz Japans ist Kyoto berühmt für seine prächtigen Tempel, gepflegten Gärten und traditionellen Geishas. Besucher können durch die engen Gassen schlendern, um die reiche Geschichte und die wunderschöne Architektur zu erleben.                </p>
-                <button class="share-btn" onclick="openShareModal('Reiseziel 3')">Teilen</button>
+                <p>Als kulturelles Herz Japans ist Kyoto berühmt für seine prächtigen Tempel, gepflegten Gärten und traditionellen Geishas. Besucher können durch die engen Gassen schlendern, um die reiche Geschichte und die wunderschöne Architektur zu erleben.</p>
+                <button class="share-btn" onclick="openShareModal('Kyoto, Japan')">Teilen</button>
             </div>
             <!-- Reisebericht 4 -->
             <div class="report">
                 <img src="img/cappadocia.jpg" alt="Reisebericht 4">
                 <h3>Cappadocia, Türkei</h3>
                 <p>Diese einzigartige Region ist bekannt für ihre surrealen Landschaften mit bizarren Felsformationen, Höhlenwohnungen und farbenfrohen Heißluftballons, die bei Sonnenaufgang über die Himmel schweben. Cappadocia bietet ein unvergessliches Erlebnis für Abenteurer.</p>
-                <button class="share-btn" onclick="openShareModal('Reiseziel 4')">Teilen</button>
+                <button class="share-btn" onclick="openShareModal('Cappadocia, Türkei')">Teilen</button>
             </div>
             <!-- Reisebericht 5 -->
             <div class="report">
                 <img src="img/kanada.jpg" alt="Reisebericht 5">
                 <h3>Banff National Park, Kanada</h3>
-                <p>Mit seinen kristallklaren Seen, majestätischen Berggipfeln und endlosen Wanderwegen ist der Banff National Park ein Paradies für Naturliebhaber. Hier können Besucher wilde Tiere beobachten, in heißen Quellen entspannen und die unberührte Schönheit der kanadischen Rockies erleben.                </p>
-                <button class="share-btn" onclick="openShareModal('Reiseziel 5')">Teilen</button>
+                <p>Mit seinen kristallklaren Seen, majestätischen Berggipfeln und endlosen Wanderwegen ist der Banff National Park ein Paradies für Naturliebhaber. Hier können Besucher wilde Tiere beobachten, in heißen Quellen entspannen und die unberührte Schönheit der kanadischen Rockies erleben.</p>
+                <button class="share-btn" onclick="openShareModal('Banff National Park, Kanada')">Teilen</button>
             </div>
             <!-- Reisebericht 6 -->
             <div class="report">
                 <img src="img/neuseeland.jpg" alt="Reisebericht 6">
                 <h3>Neuseeländische Südinsel</h3>
                 <p>Diese atemberaubende Insel ist berühmt für ihre vielfältige Landschaft, von den schneebedeckten Alpen bis zu den malerischen Küsten. Besucher können Gletscher erkunden, durch üppige Regenwälder wandern und Abenteuersportarten wie Bungee-Jumping und Skydiving ausprobieren.</p>
-                <button class="share-btn" onclick="openShareModal('Reiseziel 6')">Teilen</button>
+                <button class="share-btn" onclick="openShareModal('Neuseeländische Südinsel')">Teilen</button>
             </div>
             <!-- Reisebericht 7 -->
             <div class="report">
                 <img src="img/dubai.jpg" alt="Reisebericht 7">
                 <h3>Dubai, Vereinigte Arabische Emirate</h3>
                 <p>Diese moderne Metropole in der Wüste ist ein Symbol für Luxus und Innovation. Besucher können Wolkenkratzer bestaunen, in erstklassigen Einkaufszentren einkaufen, exotische Wüsten-Safaris unternehmen und kulturelle Sehenswürdigkeiten wie den Burj Khalifa und das Dubai Museum erkunden.</p>
-                <button class="share-btn" onclick="openShareModal('Reiseziel 7')">Teilen</button>
+                <button class="share-btn" onclick="openShareModal('Dubai, Vereinigte Arabische Emirate')">Teilen</button>
             </div>
-            <!-- Reisebericht 8 -->
-            <div class="report">
-                <img src="img/galapagos.jpg" alt="Reisebericht 8">
-                <h3>Galapagos-Inseln, Ecuador</h3>
-                <p>Diese abgelegenen Inseln im Pazifischen Ozean sind berühmt für ihre einzigartige Tierwelt und unberührte Natur. Die Galapagos bieten die Möglichkeit, seltene Tiere wie Riesenschildkröten, Meeresechsen und Blaufußtölpel in ihrer natürlichen Umgebung zu sehen, und sind ein Paradies für Taucher und Naturliebhaber.</p>
-                <button class="share-btn" onclick="openShareModal('Reiseziel 8')">Teilen</button>
-            </div>
-        </div>
-    </div>
-
-        </div>
-    </div>
-    
-    <!-- Popup für das Teilen auf Facebook und Instagram -->
-    <div id="share-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeShareModal()">&times;</span>
-            <p id="share-text">Teile dieses Reiseziel mit deinen Freunden!</p>
-            <!-- Links zum Teilen auf Facebook und Instagram -->
-            <a id="instagram-link" href="https://www.instagram.com/" target="_blank">Instagram</a>
-            <a id="facebook-link" href="https://www.facebook.com/" target="_blank">Facebook</a>
         </div>
     </div>
 
@@ -116,17 +95,16 @@
         </div>
     </div>
 
-    <script>
-        function openShareModal(destination) {
-            document.getElementById("share-modal").style.display = "block";
-            document.getElementById("share-text").innerText = "Teile " + destination + " mit deinen Freunden!";
-            document.getElementById("instagram-link").href = "https://www.instagram.com";
-            document.getElementById("facebook-link").href = "https://www.facebook.com";
-        }
-
-        function closeShareModal() {
-            document.getElementById("share-modal").style.display = "none";
-        }
-    </script>
+    <!-- Modal für das Teilen -->
+    <div id="share-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeShareModal()">&times;</span>
+            <h2>Teile dieses Reiseziel mit deinen Freunden!</h2>
+            <div id="share-links">
+                <a href="https://www.instagram.com/" target="_blank" id="share-facebook">Facebook</a>
+                <a href="https://www.facebook.com/" target="_blank" id="share-instagram">Instagram</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
